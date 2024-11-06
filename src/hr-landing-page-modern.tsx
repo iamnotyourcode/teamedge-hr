@@ -223,34 +223,58 @@ const LandingPage = () => {
               <h2 className="text-3xl font-bold text-zinc-900 mb-8">
                 Связаться со мной
               </h2>
-              <form className="space-y-6">
+
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                className="space-y-6"
+                netlify-honeypot="bot-field"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don't fill this out if you're human:{" "}
+                    <input name="bot-field" />
+                  </label>
+                </p>
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-zinc-700">
                     Ваше имя
                   </label>
                   <input
                     type="text"
+                    name="name"
+                    required
                     className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                   />
                 </div>
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-zinc-700">
                     Email
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                   />
                 </div>
+
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-zinc-700">
                     Сообщение
                   </label>
                   <textarea
+                    name="message"
+                    required
                     rows={4}
                     className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
                   />
                 </div>
+
                 <button
                   type="submit"
                   className="w-full px-8 py-4 bg-zinc-900 text-white rounded-xl hover:bg-zinc-800 transition-all flex items-center justify-center gap-2"
