@@ -26,9 +26,7 @@ const LandingPage = () => {
         <div className="container mx-auto px-6 py-24 relative z-10">
           <div className="max-w-5xl">
             <div className="inline-block mb-4 px-4 py-1 bg-white/30 backdrop-blur-md rounded-full border border-zinc-200">
-              <span className="text-orange-600 font-medium">
-                TeamEdge HR Solutions
-              </span>
+              <span className="text-orange-600 font-medium">HR Solutions</span>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-zinc-900 mb-8 leading-tight">
               Эффективные
