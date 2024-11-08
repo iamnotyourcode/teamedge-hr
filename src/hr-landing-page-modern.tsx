@@ -23,12 +23,14 @@ const LandingPage = () => {
       {/* Hero Section with modern asymmetric design */}
       <header className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-zinc-100 to-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_-20%,#ffd8cc_25%,transparent_50%)]"></div>
-        <div className="container mx-auto px-6 py-24 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-24 relative z-10">
           <div className="max-w-5xl">
-            <div className="inline-block mb-4 px-4 py-1 bg-white/30 backdrop-blur-md rounded-full border border-zinc-200">
-              <span className="text-orange-600 font-medium">HR Solutions</span>
-            </div>
-            <h1 className="text-6xl md:text-7xl font-bold text-zinc-900 mb-8 leading-tight">
+            {/* <div className="inline-block mb-4 px-4 py-1 bg-white/30 backdrop-blur-md rounded-full border border-zinc-200">
+              <span className="text-orange-600 font-medium text-sm sm:text-base">
+                TeamEdge HR Solutions
+              </span>
+            </div> */}
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-zinc-900 mb-6 sm:mb-8 leading-tight">
               Эффективные
               <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
                 {" "}
@@ -36,21 +38,23 @@ const LandingPage = () => {
               </span>
               для уверенного роста
             </h1>
-            <p className="text-xl text-zinc-600 mb-12 max-w-2xl">
+            <p className="text-lg sm:text-xl text-zinc-600 mb-8 sm:mb-12 max-w-2xl">
               Настраиваю HR-процессы так, чтобы каждый сотрудник приносил
               максимальную ценность вашему бизнесу
             </p>
-            <div className="flex flex-wrap gap-4">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="group px-8 py-4 bg-zinc-900 text-white rounded-2xl flex items-center gap-2 hover:bg-zinc-800 transition-all"
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://t.me/affiliate_v"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group w-full sm:w-auto px-6 sm:px-8 py-4 bg-zinc-900 text-white rounded-2xl flex items-center justify-center gap-2 hover:bg-zinc-800 transition-all"
               >
                 Получить консультацию
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               <button
                 onClick={() => scrollToSection("services")}
-                className="px-8 py-4 bg-white/50 backdrop-blur-md text-zinc-900 rounded-2xl border border-zinc-200 hover:bg-white/80 transition-all"
+                className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white/50 backdrop-blur-md text-zinc-900 rounded-2xl border border-zinc-200 hover:bg-white/80 transition-all flex items-center justify-center"
               >
                 Смотреть услуги
               </button>
@@ -60,13 +64,13 @@ const LandingPage = () => {
       </header>
 
       {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-12 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-16 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-8 sm:mb-16 text-center">
               Преимущества
             </h2>
-            <div className="space-y-12">
+            <div className="space-y-6 sm:space-y-8">
               {[
                 {
                   icon: Timer,
@@ -92,38 +96,44 @@ const LandingPage = () => {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className="flex gap-8 items-start p-8 bg-zinc-50 rounded-3xl hover:shadow-lg transition-all"
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start p-6 sm:p-8 bg-zinc-50 rounded-3xl hover:shadow-lg transition-all"
                 >
-                  <feature.icon className="w-12 h-12 text-orange-500 flex-shrink-0" />
+                  <feature.icon className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 flex-shrink-0" />
                   <div>
-                    <h3 className="text-xl font-bold text-zinc-900 mb-4">
+                    <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-3 sm:mb-4">
                       {feature.title}
                     </h3>
-                    <p className="text-zinc-600">{feature.description}</p>
+                    <p className="text-base sm:text-lg text-zinc-600">
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-12 text-center">
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="group px-8 py-4 bg-zinc-900 text-white rounded-2xl flex items-center gap-2 hover:bg-zinc-800 transition-all mx-auto"
+            <div className="mt-8 sm:mt-12 text-center">
+              <a
+                href="https://t.me/affiliate_v"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 text-white rounded-2xl hover:bg-zinc-800 transition-all gap-2"
               >
                 Запросить консультацию
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section with modern design */}
-      <section className="py-24 bg-zinc-50">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-white to-zinc-50 p-12 rounded-3xl border border-zinc-100">
-              <h2 className="text-4xl font-bold text-zinc-900 mb-8">Обо мне</h2>
-              <div className="space-y-6 text-zinc-600">
+      <section className="py-12 sm:py-24 bg-zinc-50">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="bg-gradient-to-br from-white to-zinc-50 p-6 sm:p-8 md:p-12 rounded-3xl border border-zinc-100">
+              <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-6 sm:mb-8">
+                Обо мне
+              </h2>
+              <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-zinc-600">
                 <p>
                   Меня зовут Виктория, и более 5 лет я помогаю бизнесам
                   выстраивать эффективные HR-процессы, которые действительно
@@ -136,30 +146,33 @@ const LandingPage = () => {
                 </p>
               </div>
             </div>
-            <div className="aspect-square bg-zinc-100 rounded-3xl">
-              {/* Placeholder for image */}
-              <img
-                src="/api/placeholder/600/600"
-                alt="Victoria"
-                className="w-full h-full object-cover rounded-3xl"
-              />
+
+            {/* На мобильных устройствах фото будет выше текста */}
+            <div className="md:order-last order-first">
+              <div className="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
+                <img
+                  src="/images/1000-cd7b6ba343ead98a7dab2987583c43ce.jpg"
+                  alt="Victoria"
+                  className="w-full h-full object-cover rounded-3xl"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Services Section with modern cards */}
-      <section id="services" className="py-24 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4">
+      <section id="services" className="py-12 sm:py-24 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-4">
               Мои услуги
             </h2>
-            <p className="text-zinc-600">
+            <p className="text-base sm:text-lg text-zinc-600">
               Комплексные решения для оптимизации HR-процессов вашей компании
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {[
               {
                 title: "HR на аутсорсе",
@@ -190,17 +203,19 @@ const LandingPage = () => {
             ].map((service, index) => (
               <div
                 key={index}
-                className="group relative p-8 bg-zinc-50 rounded-3xl hover:shadow-xl transition-all duration-300"
+                className="group relative p-6 sm:p-8 bg-zinc-50 rounded-3xl hover:shadow-xl transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity"></div>
                 <div className="relative">
-                  <service.icon className="w-12 h-12 text-orange-500 mb-6" />
-                  <h3 className="text-2xl font-bold text-zinc-900 mb-4">
+                  <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mb-4 sm:mb-6" />
+                  <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-3 sm:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-zinc-600 mb-6">{service.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-orange-500 font-semibold">
+                  <p className="text-base sm:text-lg text-zinc-600 mb-4 sm:mb-6">
+                    {service.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-lg sm:text-xl text-orange-500 font-semibold">
                       {service.price}
                     </span>
                     <button className="text-zinc-900 font-medium flex items-center gap-2 group-hover:text-orange-500 transition-colors">
@@ -215,116 +230,86 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Modern Contact Form */}
-      <section id="contact" className="py-24 bg-zinc-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-xl mx-auto">
-            <div className="bg-white p-12 rounded-3xl shadow-sm">
-              <h2 className="text-3xl font-bold text-zinc-900 mb-8">
-                Связаться со мной
-              </h2>
-
-              <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                className="space-y-6"
-                netlify-honeypot="bot-field"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>
-                    Don't fill this out if you're human:{" "}
-                    <input name="bot-field" />
-                  </label>
-                </p>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-zinc-700">
-                    Ваше имя
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-zinc-700">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-zinc-700">
-                    Сообщение
-                  </label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 bg-zinc-50 border border-zinc-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full px-8 py-4 bg-zinc-900 text-white rounded-xl hover:bg-zinc-800 transition-all flex items-center justify-center gap-2"
-                >
-                  Отправить
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Modern Footer */}
-      <footer className="bg-zinc-900 text-zinc-400 py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div className="space-y-4">
-              <h3 className="text-xl font-bold text-white">TeamEdge</h3>
-              <p className="text-sm">
-                Эффективные HR-решения для современного бизнеса
-              </p>
+      <footer className="bg-zinc-900 text-zinc-400 py-8">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col items-center gap-4">
+            {/* Social Icons */}
+            <div className="flex gap-6">
+              {/* Telegram Icon */}
+              <a
+                href="https://t.me/affiliate_v"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M22 2L11 13" />
+                  <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com/davkavavtobuse"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                {/* Instagram Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com/in/victoria-hr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                {/* LinkedIn Icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
             </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-semibold text-white">Услуги</h4>
-              <ul className="space-y-2 text-sm">
-                <li>HR на аутсорсе</li>
-                <li>HR-аудит</li>
-                <li>Консультации</li>
-                <li>Реорганизация процессов</li>
-              </ul>
+
+            {/* Copyright */}
+            <div className="text-sm">
+              © {new Date().getFullYear()} HR Victoria. All Rights Reserved.
             </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-semibold text-white">Информация</h4>
-              <ul className="space-y-2 text-sm">
-                <li>Обо мне</li>
-                <li>Кейсы</li>
-                <li>Блог</li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-semibold text-white">Контакты</h4>
-              <ul className="space-y-2 text-sm">
-                <li>contact@teamedge.com</li>
-                <li>Telegram: @teamedge</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-zinc-800 mt-16 pt-8 text-sm text-center">
-            © 2024 TeamEdge. Все права защищены.
           </div>
         </div>
       </footer>
