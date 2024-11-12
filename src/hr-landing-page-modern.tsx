@@ -128,7 +128,7 @@ const LandingPage = () => {
       {/* About Section with modern design */}
       <section className="py-12 sm:py-24 bg-zinc-50">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="max-w-3xl mx-auto">
             <div className="bg-gradient-to-br from-white to-zinc-50 p-6 sm:p-8 md:p-12 rounded-3xl border border-zinc-100">
               <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 mb-6 sm:mb-8">
                 Обо мне
@@ -144,17 +144,6 @@ const LandingPage = () => {
                   процедур, а стратегический элемент бизнеса, способный
                   значительно влиять на его рост и развитие.
                 </p>
-              </div>
-            </div>
-
-            {/* На мобильных устройствах фото будет выше текста */}
-            <div className="md:order-last order-first">
-              <div className="aspect-square bg-zinc-100 rounded-3xl overflow-hidden">
-                <img
-                  src="/images/1000-cd7b6ba343ead98a7dab2987583c43ce.jpg"
-                  alt="Victoria"
-                  className="w-full h-full object-cover rounded-3xl"
-                />
               </div>
             </div>
           </div>
@@ -178,27 +167,19 @@ const LandingPage = () => {
                 title: "HR на аутсорсе",
                 description:
                   "Полное ведение HR-процессов компании с фокусом на результат",
-                price: "от $500",
-                icon: Users,
               },
               {
                 title: "HR-аудит компании",
                 description:
                   "Глубокий анализ и оптимизация существующих процессов",
-                price: "от $800",
-                icon: BarChart,
               },
               {
                 title: "Часовая консультация",
                 description: "Экспертное решение конкретных HR-задач",
-                price: "$150/час",
-                icon: Send,
               },
               {
                 title: "Реорганизация процессов",
                 description: "Комплексная трансформация HR-системы",
-                price: "от $3000",
-                icon: BookOpen,
               },
             ].map((service, index) => (
               <div
@@ -207,22 +188,12 @@ const LandingPage = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity"></div>
                 <div className="relative">
-                  <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 mb-4 sm:mb-6" />
                   <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-3 sm:mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-base sm:text-lg text-zinc-600 mb-4 sm:mb-6">
+                  <p className="text-base sm:text-lg text-zinc-600">
                     {service.description}
                   </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-lg sm:text-xl text-orange-500 font-semibold">
-                      {service.price}
-                    </span>
-                    <button className="text-zinc-900 font-medium flex items-center gap-2 group-hover:text-orange-500 transition-colors">
-                      Подробнее
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
                 </div>
               </div>
             ))}
